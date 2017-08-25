@@ -1,0 +1,122 @@
+Task 1
+
+git branch architecture
+git branch
+git checkout architecture
+mkdir assets/
+mkdir uploads/
+touch index.html
+ls -l
+git status
+git add .
+git commit -m "Created new file(index.html) and created two folder(assets and uploads"
+git status
+cd assets/
+echo "all js" > all.js
+echo "css js" >> css.js
+ls -l
+git status
+git add .
+git commit -m "added all.js and css.js"
+git push --set-upstream origin architecture
+touch .gitignore
+cd uploads/
+touch .gitkeep
+cd ..
+git status
+git add .
+git commit -m "created .gitignore"
+git push
+git checkout master
+git merge architecture
+git push
+git branch -d architecture
+git push origin --delete architecture
+
+Task 2
+
+git branch exp
+git branch
+echo "1rebase" >> r1.txt
+git status
+git add .
+git commit -m "created r1.txt"
+git status
+touch r2.html
+git add .
+git commit -m "created r2.html"
+git status
+git branch
+git checkout exp
+git rebase master
+git fetch origin
+touch exp.txt
+git add .
+git commit -m "Added r3.js"
+git checkout master
+git merge exp
+git push
+git checkout exp
+git push -u origin exp
+git checkout master
+git branch -d exp
+git push origin --delete exp
+
+Task 3
+git status
+echo "r4" >> r4.css
+git add .
+git commit -m "added r4.css"
+git status
+touch r41.png
+git status
+git add .
+git status
+git commit -m "added r41.png"
+git tag -a v1.2 -m 'my new version 1.2'
+git push
+git push origin --tags
+Task 4
+
+git submodule add https://github.com/ihormedvid/testing-the-github-pages sm-test
+git status
+git commit -m "added submodule in project"
+git push
+
+Task 5
+git branch gh-pages
+git branch
+git checkout gh-pages
+echo "<h1>Test 5</h1>" >> index.html
+git status
+git add .
+git commit -m "created index.html"
+git push --set-upstream origin gh-pages
+git add .
+git status
+git commit -m "upgrade(new header) index.html"
+git push
+// https://ihormedvid.github.io/github-advanced/
+
+Task 6
+git branch t6
+git checkout master
+echo "confs" >> file.txt
+git status
+git add .
+git commit -m "created file.txt"
+git push
+git checkout t6
+touch file.txt
+git status
+git add .
+git commit -m "created and upgrade file.txt"
+git push origin t6
+git checkout master
+git merge t6
+git merge --abort
+git status
+git add .
+git commit -m "fixed conflict"
+git status
+git push
